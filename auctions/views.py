@@ -179,17 +179,16 @@ def wishlist(request, auctionid5):
         wid = request.user
         waucid = AuctionListing.objects.get(pk=auctionid5)
         w = Wishlist(wid=wid, waucid=waucid)
-        if (Wishlist.objects.filter(pk=auctionid5).exists() == False):
+        if (Wishlist.objects.filter(waucid=auctionid5).exists() == False):
             w = Wishlist(wid=wid, waucid=waucid)
             w.save()
             return HttpResponseRedirect(reverse(index))
         else:
-            return HttpResponse("yes")
-        return render(request, "auctions/samp.html", {
-            "message": "Added to your watchlist.",
-            "high": f1.highestbidder,
-            "f1": f1
-        })
+            return render(request, "auctions/samp.html", {
+                "message": "Added to your watchlist.",
+                "high": f1.highestbidder,
+                "f1": f1
+            })
 
 
 def wishlist2(request):

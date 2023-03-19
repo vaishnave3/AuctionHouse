@@ -1,16 +1,13 @@
 {% extends "auctions/layout.html" %}
-{% load mathfilters %}
 
 {% block body %}
-    <h2>Active Listings</h2>
+    <h2>My Wins</h2>
     <ol>
         <div>
             {% for i in items %}
-            {% if i.closed == false %}
             <li>
-                <a href="/listing/{{ i.id }}">{{ i.title }}</a>
+                {{ i.myWins }}
             </li>
-            {% endif %}
             {% endfor %}
         </div>
     </ol>

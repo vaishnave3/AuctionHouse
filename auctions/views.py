@@ -130,7 +130,8 @@ def bid(request, auctionid2):
             message = "Your bid price is less than current price of item. Cannot place bid."
         else:
             message = "Bid Placed."
-            b = Bids(biduser=request.user, bidprice=bidprice)
+            b = Bids(biduserid=request.user.id,
+                     biduser=request.user, bidprice=bidprice)
             b.save()
             f1.highestbidder = request.user.id
             f1.currentprice = bidprice
@@ -146,6 +147,10 @@ def close(request, auctionid3):
     f3 = AuctionListing.objects.get(pk=auctionid3)
     f3.closed = True
     f3.save()
+    f4 = Bids.objects.get(biduserid=f3.highestbidder)
+    curr_text = f4.myWins
+    f4.myWins = curr_text + f3.title
+    f4.save()
     message = "Closed Bid Item."
     return render(request, "auctions/samp.html", {
         "message": message,
@@ -205,6 +210,14 @@ def wishlist2(request):
         "message": message
     })
 
+
+def mywins(request):
+    rid = request.user.id
+    b = Bids.objects.filter(biduserid=rid)
+    return render(request, "auctions/mywins.html", {
+        "items": b,
+        "message": 'message'
+    })
 
 def wishlistr(request, auctionid5):
     if request.method == 'POST':

@@ -16,7 +16,7 @@
                 <img src="{{ auction.imageupload }}">
                 <h4><a href="{% url 'listing' auction.id %}" style="color:rgb(27, 21, 85)">{{ auction.title }}</a></h4>
                 <div class="btns">
-                    <p>{{ auction.currentprice }} &#x20b9<br><br>
+                    <p>{{ auction.category}} - {{ auction.currentprice }} &#x20b9<br><br>
                     <a href="{% url 'listing' auction.id %}" style="color:rgb(27, 21, 85)"><button>bid</button></a>
                 </div>
                 {% endif %}

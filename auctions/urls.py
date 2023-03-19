@@ -16,6 +16,7 @@ urlpatterns = [
     path("category/<str:namecat1>", views.namecat, name="namecat"),
     path("wishlist/<int:auctionid5>", views.wishlist, name="wishlist"),
     path("wishlist", views.wishlist2, name="wishlist2"),
+    path("mywins", views.mywins, name="mywins"),
     path("wishlistremove/<int:auctionid5>", views.wishlistr, name="wishlistr")
 ]
 

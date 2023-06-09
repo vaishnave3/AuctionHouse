@@ -4,9 +4,9 @@
 {% block body %}
     <h2>Active Listings</h2>
     <ol>
-        <div>
-            {% for i in items %}
-            {% if i.closed == false %}
+        <div class="wishlist">
+            {% for i in items1 %}
+            {% if i.closed == False %}
             <li>
                 <a href="/listing/{{ i.id }}">{{ i.title }}</a>
             </li>

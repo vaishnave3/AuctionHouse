@@ -135,6 +135,7 @@ def bid(request, auctionid2):
             b.save()
             f1.highestbidder = request.user.id
             f1.currentprice = bidprice
+            f1.closed = False
             f1.save()
     return render(request, "auctions/samp.html", {
         "message": message,
@@ -174,7 +175,7 @@ def comment(request, auctionid4):
 def namecat(request, namecat1):
     f1 = AuctionListing.objects.filter(category=namecat1)
     return render(request, "auctions/namecat.html", {
-        "items": f1
+        "items1": f1
     })
 
 

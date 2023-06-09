@@ -12,7 +12,7 @@ h5 {
 }
 
 .box {
-    width: 10%;
+    width: 20%;
     padding: 6px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -21,7 +21,7 @@ h5 {
 }
 
 .button {
-  background-color: rgba(175, 88, 102, 0.672);
+  /* background-color: rgba(175, 88, 102, 0.672); */
   border: none;
   color: white;
   padding: 6px;
@@ -148,4 +148,48 @@ h5 {
 
 .enlisting-wrap a {
   color: white;
+}
+.wishlist li {
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.wishlist a {
+  color: rgb(41, 38, 70);
+}
+
+.displayA {
+  padding: 10px;
+  display: flex;
+  max-width: 75%;
+  margin-left: 22%;
+}
+
+.desc {
+  padding: 10px;
+  max-width: 500px;
+}
+
+.button2 {
+  background-color: rgb(2, 35, 57);
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.comments {
+  /* background-color: aqua; */
+  margin-left: 22%;
+  margin-top: 1%;
+  max-width: 75%;
 }
